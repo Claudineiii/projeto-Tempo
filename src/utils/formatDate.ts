@@ -18,4 +18,3 @@ export function converterHora(timestamp: number, timezone: number): string {
     minute: "2-digit",
   });
 }
-
