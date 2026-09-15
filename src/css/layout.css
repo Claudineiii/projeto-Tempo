@@ -1,0 +1,161 @@
+.app-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controles-topo {
+  display: flex;
+  gap: 12px;
+}
+
+.controles-topo .btn-icone {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.controles-topo .btn-icone:hover {
+  border-color: var(--accent);
+  background-color: var(--surface-card);
+}
+
+.container-principal {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.barra-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  position: sticky;
+  top: 80px;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.links-rodape {
+  display: flex;
+  gap: 24px;
+}
+
+.links-rodape a:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 1200px) {
+  .container-principal {
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+  }
+
+  .barra-lateral {
+    gap: 28px;
+  }
+
+  .conteudo-principal {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-wrapper {
+    padding: 0 32px;
+  }
+
+  .cabecalho {
+    margin-bottom: 32px;
+  }
+
+  .container-principal {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .barra-lateral {
+    position: static;
+    gap: 24px;
+  }
+
+  .conteudo-principal {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-wrapper {
+    padding: 0 20px;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .container-principal {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .conteudo-principal,
+  .barra-lateral {
+    gap: 20px;
+  }
+
+  .conteudo-principal {
+    max-width: 100%;
+  }
+}

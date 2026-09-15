@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central do Clima</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/variables.css" />
+    <link rel="stylesheet" href="./src/css/base.css" />
+    <link rel="stylesheet" href="./src/css/layout.css" />
+    <link rel="stylesheet" href="./src/css/components.css" />
+    <link rel="stylesheet" href="./src/css/forecast.css" />
+    <link rel="stylesheet" href="./src/css/favorites.css" />
+    <link rel="stylesheet" href="./src/css/dark-mode.css" />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <!-- ========== CABEÇALHO ========== -->
+      <header class="cabecalho">
+        <div class="logo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>Central do Clima</span>
+        </div>
+        <div class="controles-topo">
+          <button id="btn-tema" class="btn-icone" type="button" aria-label="Ativar tema claro" aria-pressed="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+      <main class="container-principal">
+        <!-- ========== COLUNA ESQUERDA ========== -->
+        <section class="conteudo-principal">
+          <!-- Campo de Busca e Tags -->
+          <div class="secao-busca">
+            <div class="barra-busca">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input id="input-cidade" type="text" placeholder="Digite o nome da cidade..." />
+              <button id="btn-localizacao" class="btn-localizacao" aria-label="Usar localização atual">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="22" y1="12" x2="18" y2="12"></line>
+                  <line x1="6" y1="12" x2="2" y2="12"></line>
+                  <line x1="12" y1="6" x2="12" y2="2"></line>
+                  <line x1="12" y1="22" x2="12" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="tags-cidades">
+              <button class="tag-cidade active">SÃO PAULO</button>
+              <button class="tag-cidade">RIO DE JANEIRO</button>
+              <button class="tag-cidade">LONDRES</button>
+            </div>
+          </div>
+
+          <!-- Card Clima Principal -->
+          <article class="card-clima">
+            <div class="card-clima-esquerda">
+              <div class="clima-topo-esquerda">
+                <div class="clima-header">
+                  <h1 id="nome-cidade">São Paulo, BR</h1>
+                  <button id="btn-favorito" class="btn-favorito" aria-label="Favoritar cidade">★</button>
+                </div>
+                <span id="condicao-clima" class="condicao-texto"> Parcialmente Nublado </span>
+              </div>
+              <div class="clima-base-esquerda">
+                <span id="temperatura-atual" class="temperatura-grande"> 24° </span>
+                <div class="sensacao-box">
+                  <small>SENSAÇÃO</small>
+                  <strong id="sensacao-termica">26°</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-clima-direita">
+              <div class="clima-icone-grande" id="icone-clima">
+                <img id="img-icone-clima" src="" alt="Ícone do clima" style="width: 80px; height: 80px" />
+              </div>
+              <div class="clima-horarios">
+                <div class="item-sol">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                  </svg>
+                  <div class="texto-sol">
+                    <small>NASCER</small>
+                    <strong id="nascer-sol">05:30</strong>
+                  </div>
+                </div>
+                <div class="divisor-sol"></div>
+                <div class="item-sol">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 1 21 12.79z"></path>
+                  </svg>
+                  <div class="texto-sol">
+                    <small>PÔR</small>
+                    <strong id="por-sol">18:45</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Grid de Métricas de Clima -->
+          <div class="lista-informacoes">
+            <!-- UMIDADE -->
+            <div class="info-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+              <div>
+                <span class="info-label">UMIDADE</span>
+                <span id="umidade" class="info-valor">68%</span>
+              </div>
+            </div>
+
+            <!-- VENTO -->
+            <div class="info-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+              </svg>
+              <div>
+                <span class="info-label">VENTO</span>
+                <span id="vento" class="info-valor"> 12 <small>km/h</small> </span>
+              </div>
+            </div>
+
+            <!-- PRESSÃO -->
+            <div class="info-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+              <div>
+                <span class="info-label">PRESSÃO</span>
+                <span id="pressao" class="info-valor"> 1013 <small>hPa</small> </span>
+              </div>
+            </div>
+
+            <!-- VISIBILIDADE -->
+            <div class="info-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <div>
+                <span class="info-label">VISIBILIDADE</span>
+                <span id="visibilidade" class="info-valor"> 10 <small>km</small> </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seção de Previsão Horária / Diária -->
+          <section class="secao-previsao">
+            <div class="abas-previsao">
+              <button id="aba-horaria" class="aba-item active">Próximas Horas</button>
+              <button id="aba-diaria" class="aba-item">Próximos Dias</button>
+            </div>
+            <div id="lista-previsao-horaria" class="lista-previsao-horaria">
+              <!-- AGORA -->
+              <div class="card-previsao-horaria active">
+                <span class="hora-label">Agora</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                  </svg>
+                </div>
+                <span class="hora-temp">24°</span>
+              </div>
+
+              <!-- 14:00 -->
+              <div class="card-previsao-horaria">
+                <span class="hora-label">14:00</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a7 7 0 0 0 0-14z"></path>
+                  </svg>
+                </div>
+                <span class="hora-temp">25°</span>
+              </div>
+
+              <!-- 15:00 -->
+              <div class="card-previsao-horaria">
+                <span class="hora-label">15:00</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                      d="M12 2.69l.06.31a8.05 8.05 0 0 0 15.88 4.3c1.08-4.3.03-8.52-2.95-11.85M9 18.36l-.06-.31a8.05 8.05 0 0 0-15.88-4.2c-1.08 4.3-.03 8.52 2.95 11.85"></path>
+                  </svg>
+                </div>
+                <span class="hora-temp">22°</span>
+              </div>
+
+              <!-- 16:00 -->
+              <div class="card-previsao-horaria">
+                <span class="hora-label">16:00</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                      d="M12 2.69l.06.31a8.05 8.05 0 0 0 15.88 4.3c1.08-4.3.03-8.52-2.95-11.85M9 18.36l-.06-.31a8.05 8.05 0 0 0-15.88-4.2c-1.08 4.3-.03 8.52 2.95 11.85"></path>
+                  </svg>
+                </div>
+                <span class="hora-temp">21°</span>
+              </div>
+
+              <!-- 17:00 -->
+              <div class="card-previsao-horaria">
+                <span class="hora-label">17:00</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a7 7 0 0 0 0-14z"></path>
+                  </svg>
+                </div>
+                <span class="hora-temp">21°</span>
+              </div>
+
+              <!-- 18:00 -->
+              <div class="card-previsao-horaria">
+                <span class="hora-label">18:00</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 1 21 12.79z"></path>
+                  </svg>
+                </div>
+                <span class="hora-temp">20°</span>
+              </div>
+
+              <!-- 19:00 -->
+              <div class="card-previsao-horaria">
+                <span class="hora-label">19:00</span>
+                <div class="hora-icone">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 1 21 12.79z"></path>
+                  </svg>
+                </div>
+                <span class="hora-temp">18°</span>
+              </div>
+            </div>
+
+            <!-- Container para Previsão Diária (oculto por padrão) -->
+            <div id="lista-previsao-diaria" class="lista-previsao-diaria is-hidden"></div>
+          </section>
+        </section>
+
+        <!-- ========== COLUNA DIREITA (BARRA LATERAL) ========== -->
+        <aside class="barra-lateral">
+          <!-- Card Mapa / Radar -->
+          <div class="card-mapa">
+            <div id="mapa-radar" class="mapa-placeholder"></div>
+
+            <span class="mapa-radar">MAPA DA CIDADE</span>
+
+            <button
+              id="btn-expandir-mapa"
+              class="btn-expandir-mapa"
+              type="button"
+              aria-label="Expandir mapa"
+              aria-expanded="false">
+              ⤢
+            </button>
+          </div>
+
+          <!-- Seção Favoritos -->
+          <section class="secao-favoritos">
+            <div class="favoritos-header">
+              <h2>Favoritos</h2>
+              <button id="btn-add-favorito" class="btn-add-favorito" type="button" aria-label="Favoritar cidade atual">
+                +
+              </button>
+            </div>
+            <div id="lista-favoritos" class="lista-favoritos"></div>
+          </section>
+        </aside>
+      </main>
+
+      <!-- ========== RODAPÉ ========== -->
+      <footer class="rodape">
+        <span>© 2026 Central do Clima</span>
+      </footer>
+    </div>
+    <script type="module" src="./src/app.ts"></script>
+  </body>
+</html>

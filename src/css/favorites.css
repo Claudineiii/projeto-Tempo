@@ -1,0 +1,250 @@
+.card-mapa {
+  background: linear-gradient(135deg, #1d1c1c 0%, #131212 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.card-mapa-expandido {
+  position: fixed;
+  inset: 5vh 5vw;
+  z-index: 2000;
+  height: 90vh;
+}
+
+.mapa-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Botão Radar ao Vivo */
+.mapa-radar {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1000;
+
+  background-color: rgba(14, 14, 14, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-primary);
+  padding: 8px 16px;
+
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  cursor: pointer;
+  transition: all var(--transition-fast);
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mapa-radar:hover {
+  background-color: rgba(14, 14, 14, 1);
+  border-color: var(--accent);
+}
+
+/* Botão expandir */
+.btn-expandir-mapa {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
+
+  background-color: rgba(14, 14, 14, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  transition: all var(--transition-fast);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  flex-shrink: 0;
+}
+
+.btn-expandir-mapa:hover {
+  background-color: rgba(14, 14, 14, 1);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* Leaflet */
+#mapa-radar {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.secao-favoritos {
+  background: linear-gradient(135deg, #141313 0%, #1a1919 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow);
+  min-height: fit-content;
+  height: auto;
+}
+
+.favoritos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favoritos-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.btn-add-favorito {
+  font-size: 1.3rem;
+  color: var(--accent);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.btn-add-favorito:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.lista-favoritos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: fit-content;
+}
+
+.card-favorito {
+  background: linear-gradient(135deg, #1d1c1c 0%, #131212 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  min-height: 56px;
+}
+
+.card-favorito:hover {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #222121 0%, #171616 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+.favorito-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.favorito-info strong {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.favorito-info small {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.favorito-temp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.favorito-temp svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.favorito-temp .weather-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.btn-remover-favorito {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-muted);
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.btn-remover-favorito:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+@media (max-width: 768px) {
+  .card-mapa {
+    height: 160px;
+  }
+
+  .mapa-placeholder {
+    padding: 12px;
+  }
+
+  .btn-radar-ao-vivo {
+    padding: 6px 12px;
+    font-size: 0.6rem;
+  }
+
+  .secao-favoritos {
+    padding: 16px;
+  }
+}

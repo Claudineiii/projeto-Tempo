@@ -1,0 +1,302 @@
+.secao-previsao {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.abas-previsao {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.aba-item {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding-bottom: 8px;
+  position: relative;
+  transition: color var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.aba-item:hover {
+  color: var(--text-secondary);
+}
+
+.aba-item.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.aba-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.lista-previsao-horaria {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 8px;
+  overflow: hidden;
+  padding-bottom: 4px;
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal),
+    max-height var(--transition-normal);
+}
+
+.lista-previsao-horaria::-webkit-scrollbar {
+  height: 4px;
+}
+
+.lista-previsao-horaria::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lista-previsao-horaria::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.card-previsao-horaria {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  height: 160px;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.card-previsao-horaria.active {
+  background-color: var(--surface-card);
+  border-color: var(--accent);
+}
+
+.card-previsao-horaria:hover {
+  border-color: var(--accent);
+  background-color: var(--surface-card);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+.hora-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hora-icone {
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+}
+
+.hora-icone svg {
+  width: 40px;
+  height: 40px;
+  color: var(--text-primary);
+}
+
+.hora-icone.emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.hora-temp {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.card-previsao-horaria:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsivo - Ajustar tamanho em telas menores */
+@media (max-width: 768px) {
+  .card-previsao-horaria {
+    height: 145px;
+    padding: 14px 10px;
+  }
+
+  .hora-icone svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hora-temp {
+    font-size: 0.9rem;
+  }
+}
+
+.lista-previsao-diaria {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 4px;
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal),
+    max-height var(--transition-normal);
+}
+
+.card-previsao-diaria {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  height: 160px;
+  transition: all var(--transition-fast);
+}
+
+.card-previsao-diaria:hover {
+  border-color: var(--accent);
+  background-color: var(--surface-card);
+  box-shadow: var(--shadow-accent);
+  transform: translateX(4px);
+}
+
+.dia-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  text-align: center;
+}
+
+.dia-data {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.dia-nome {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.dia-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.dia-icone img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.dia-temps {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.temp-max {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.temp-min {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Responsivo - Ajustar para telas menores */
+@media (max-width: 768px) {
+  .lista-previsao-horaria {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lista-previsao-diaria {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-previsao-diaria {
+    height: 145px;
+    padding: 10px 8px;
+  }
+
+  .dia-icone {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dia-icone img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dia-data {
+    font-size: 0.75rem;
+  }
+
+  .dia-nome {
+    font-size: 0.875rem;
+  }
+
+  .temp-max,
+  .temp-min {
+    font-size: 0.8rem;
+  }
+}
+
+.lista-previsao-horaria.is-hidden,
+.lista-previsao-diaria.is-hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  visibility: hidden;
+  pointer-events: none;
+}

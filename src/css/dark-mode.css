@@ -1,0 +1,28 @@
+body.tema-claro {
+  --background: #f4f7fb;
+  --surface: #ffffff;
+  --surface-bright: #dce5ef;
+  --surface-card: #edf3f8;
+  --surface-hover: #e4edf5;
+  --text-primary: #172033;
+  --text-secondary: #536278;
+  --text-muted: #64748b;
+  --primary: #172033;
+  --primary-hover: #334155;
+  --border: rgba(23, 32, 51, 0.14);
+  --border-color: rgba(23, 32, 51, 0.14);
+  --shadow: 0 10px 30px rgba(23, 32, 51, 0.12);
+  --shadow-lg: 0 8px 24px rgba(23, 32, 51, 0.1);
+}
+
+body.tema-claro .card-clima,
+body.tema-claro .secao-favoritos,
+body.tema-claro .card-favorito,
+body.tema-claro .card-mapa {
+  background: var(--surface);
+}
+
+body.tema-claro .mapa-radar,
+body.tema-claro .btn-expandir-mapa {
+  background-color: rgba(255, 255, 255, 0.92);
+}

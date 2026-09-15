@@ -1,0 +1,391 @@
+.secao-busca {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.barra-busca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  transition: all var(--transition-fast);
+}
+
+.barra-busca:focus-within {
+  border-color: var(--accent);
+  background-color: var(--surface-card);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.barra-busca svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.barra-busca input {
+  flex: 1;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.barra-busca input::placeholder {
+  color: var(--text-secondary);
+}
+
+.barra-busca input:focus {
+  outline: none;
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+
+.btn-localizacao {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px;
+  margin: -8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.btn-localizacao:hover {
+  color: var(--primary);
+}
+
+.btn-localizacao svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* TAGS DE CIDADES */
+.tags-cidades {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tag-cidade {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.tag-cidade:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background-color: var(--surface-card);
+}
+
+.tag-cidade.active {
+  background-color: var(--surface-card);
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.card-clima {
+  background: linear-gradient(135deg, #141313 0%, #1c1b1b 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 240px;
+  gap: 2rem;
+  box-shadow: var(--shadow);
+  transition: all var(--transition-fast);
+}
+
+/* Coluna Esquerda */
+.card-clima-esquerda {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.clima-topo-esquerda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.clima-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clima-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.btn-favorito {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform var(--transition-fast);
+}
+
+.btn-favorito:hover {
+  transform: scale(1.1);
+}
+
+.condicao-texto {
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0;
+  text-transform: none;
+}
+
+.clima-base-esquerda {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.temperatura-grande {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.sensacao-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.sensacao-box small {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sensacao-box strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Coluna Direita */
+.card-clima-direita {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 0 0 auto;
+}
+
+.clima-icone-grande {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.clima-icone-grande svg,
+.clima-icone-grande i {
+  width: 80px;
+  height: 80px;
+  color: var(--text-primary);
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));
+}
+
+.clima-horarios {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.item-sol {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item-sol svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-secondary);
+}
+
+.texto-sol {
+  display: flex;
+  flex-direction: column;
+}
+
+.texto-sol small {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.texto-sol strong {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.divisor-sol {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border);
+}
+
+.lista-informacoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  transition: all var(--transition-fast);
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+.info-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-accent);
+}
+
+.info-card svg {
+  width: 32px;
+  height: 32px;
+  color: var(--text-primary);
+}
+
+.info-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.info-valor {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.info-valor small {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+/* Responsivo - Grid 2 colunas em telas menores */
+@media (max-width: 1024px) {
+  .lista-informacoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .lista-informacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .card-clima {
+    flex-direction: column;
+    min-height: 0;
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .card-clima-esquerda,
+  .card-clima-direita {
+    width: 100%;
+  }
+
+  .card-clima-esquerda,
+  .clima-topo-esquerda {
+    align-items: center;
+  }
+
+  .clima-base-esquerda {
+    justify-content: center;
+  }
+
+  .card-clima-direita {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .clima-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .temperatura-grande {
+    font-size: 4rem;
+  }
+
+  .clima-icone-grande {
+    justify-content: center;
+  }
+
+  .clima-icone-grande svg,
+  .clima-icone-grande i {
+    width: 64px;
+    height: 64px;
+  }
+}
