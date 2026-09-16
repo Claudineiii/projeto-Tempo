@@ -264,12 +264,14 @@ Fuso horário
 
 🔗 Documentação: https://openweathermap.org/api
 
-## Leaflet
+---
+# Leaflet
 Biblioteca utilizada para criar o mapa interativo.
 
 🔗 Documentação: https://leafletjs.com/
 
-## OpenStreetMap
+---
+# OpenStreetMap
 Fornece as camadas de mapa (tiles) utilizadas pelo Leaflet.
 
 🔗 Documentação: https://www.openstreetmap.org/
